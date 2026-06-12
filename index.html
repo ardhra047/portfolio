@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -31,66 +30,55 @@ body {
   top: 0;
   background: rgba(0,0,0,0.3);
   backdrop-filter: blur(10px);
-  padding: 15px;
+  padding: 10px;
   text-align: center;
 }
 
 .navbar a {
   color: white;
-  margin: 0 15px;
+  margin: 0 10px;
   text-decoration: none;
 }
 
-.navbar a:hover {
-  color: #38bdf8;
-}
-
-/* SECTION */
+/* SECTIONS */
 .container {
-  padding: 60px 20px;
+  padding: 30px 15px; /* reduced spacing */
   text-align: center;
 }
 
-h1 { color: #38bdf8; }
+h1 { color: #38bdf8; margin-bottom: 5px; }
+h2 { color: #38bdf8; margin-bottom: 10px; }
 
 /* CARDS */
 .card {
   background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
-  padding: 20px;
-  margin: 15px;
-  border-radius: 12px;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 10px;
   display: inline-block;
-  width: 260px;
+  width: 230px;
   transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 20px #38bdf8;
+  transform: translateY(-5px);
 }
 
-.project-img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-/* BUTTONS */
+/* BUTTON */
 .btn {
   display: inline-block;
-  margin: 5px;
-  padding: 8px 15px;
+  margin: 3px;
+  padding: 6px 12px;
   background: #38bdf8;
   color: black;
-  border-radius: 6px;
+  border-radius: 5px;
   text-decoration: none;
-  font-size: 14px;
 }
 
 /* FILTER */
 .filter-btn {
-  margin: 5px;
-  padding: 8px 15px;
+  margin: 3px;
+  padding: 6px 12px;
   border: none;
   background: #1e293b;
   color: white;
@@ -108,38 +96,19 @@ h1 { color: #38bdf8; }
 }
 
 /* SKILLS */
-.skill {
-  margin: 15px auto;
-  width: 60%;
-  text-align: left;
-}
-
-.bar {
-  height: 10px;
-  background: #334155;
-  border-radius: 5px;
-}
-
-.fill {
-  height: 10px;
-  background: #38bdf8;
+.skills span {
+  display: inline-block;
+  margin: 5px;
+  padding: 6px 10px;
+  background: #1e293b;
   border-radius: 5px;
 }
 
 /* CONTACT */
-.contact a {
-  display: inline-block;
-  margin: 10px;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
+.contact i {
+  margin: 5px;
+  font-size: 18px;
 }
-
-.github { background: #38bdf8; color: black; }
-.linkedin { background: #0a66c2; color: white; }
-.resume { background: #22c55e; color: black; }
-
 </style>
 
 </head>
@@ -149,7 +118,6 @@ h1 { color: #38bdf8; }
 <div id="particles-js"></div>
 
 <!-- NAVBAR -->
-
 <div class="navbar">
   <a href="#">Home</a>
   <a href="#projects">Projects</a>
@@ -158,14 +126,12 @@ h1 { color: #38bdf8; }
 </div>
 
 <!-- HERO -->
-
 <div class="container">
   <h1>Hi, I'm Ardhra 👋</h1>
   <p>Data Analyst | Data Scientist | AI/ML Enthusiast</p>
 </div>
 
 <!-- FILTER -->
-
 <div class="container">
   <button class="filter-btn active" onclick="filterSelection('all')">All</button>
   <button class="filter-btn" onclick="filterSelection('ml')">ML</button>
@@ -173,21 +139,18 @@ h1 { color: #38bdf8; }
 </div>
 
 <!-- PROJECTS -->
-
 <div class="container" id="projects">
 
   <div class="card ml">
-    <img src="images/liver.png" class="project-img">
-    <h3>Liver Disease Prediction</h3>
-    <p>Gradient Boosting | F1 Score: 0.83</p>
+    <h3>Liver Disease</h3>
+    <p>ML Model</p>
     <a href="#" class="btn">Demo</a>
     <a href="#" class="btn">Code</a>
   </div>
 
   <div class="card analysis">
-    <img src="images/flight.png" class="project-img">
-    <h3>Flight Price Prediction</h3>
-    <p>Regression | Feature Engineering</p>
+    <h3>Flight Price</h3>
+    <p>Analysis</p>
     <a href="#" class="btn">Demo</a>
     <a href="#" class="btn">Code</a>
   </div>
@@ -195,47 +158,28 @@ h1 { color: #38bdf8; }
 </div>
 
 <!-- SKILLS -->
-
 <div class="container" id="skills">
-  <h2>🧠 Skills</h2>
-
-  <div class="skill">Python
-    <div class="bar"><div class="fill" style="width:90%"></div></div>
+  <h2>Skills</h2>
+  <div class="skills">
+    <span>Python</span>
+    <span>Pandas</span>
+    <span>Machine Learning</span>
+    <span>Power BI</span>
+    <span>Tableau</span>
+    <span>MongoDB</span>
   </div>
-
-  <div class="skill">Machine Learning
-    <div class="bar"><div class="fill" style="width:85%"></div></div>
-  </div>
-
-  <div class="skill">Data Analysis
-    <div class="bar"><div class="fill" style="width:88%"></div></div>
-  </div>
-
-  <div class="skill">SQL
-    <div class="bar"><div class="fill" style="width:80%"></div></div>
-  </div>
-
 </div>
 
 <!-- CONTACT -->
-
-<div class="container contact" id="contact">
-  <h2>📫 Contact</h2>
-
-  <p>Email: ardhrakn047@gmail.com</p>
-
-  <a href="https://github.com/ardhra047" class="github">
-    <i class="fab fa-github"></i> GitHub
-  </a>
-
-  <a href="https://www.linkedin.com/in/ardhra-k-916338297/" class="linkedin">
-    <i class="fab fa-linkedin"></i> LinkedIn
-  </a>
-
-  <a href="YOUR_RESUME_LINK" class="resume">
-    <i class="fas fa-file"></i> Resume
-  </a>
-
+<div class="container" id="contact">
+  <h2>Contact</h2>
+  <div class="contact">
+    <p>Email: yourmail@gmail.com</p>
+    <p>
+      <i class="fab fa-github"></i> GitHub |
+      <i class="fab fa-linkedin"></i> LinkedIn
+    </p>
+  </div>
 </div>
 
 <script>
@@ -252,7 +196,7 @@ function filterSelection(category) {
 
 particlesJS("particles-js", {
   particles: {
-    number: { value: 60 },
+    number: { value: 50 },
     size: { value: 3 },
     move: { speed: 2 },
     line_linked: { enable: true }
