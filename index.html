@@ -3,111 +3,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ardhra K PORTFOLIO</title>
+<title>Portfolio</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 body {
   margin: 0;
-  font-family: Arial;
-  background: #0f172a;
+  font-family: 'Poppins', sans-serif;
+  background: #0b1120;
   color: white;
 }
 
-/* PARTICLES */
-#particles-js {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 60px;
 }
 
-/* NAVBAR */
-.navbar {
-  position: sticky;
-  top: 0;
-  background: rgba(0,0,0,0.3);
-  backdrop-filter: blur(10px);
-  padding: 10px;
-  text-align: center;
-}
-
-.navbar a {
+nav a {
   color: white;
-  margin: 0 10px;
   text-decoration: none;
+  margin-left: 20px;
 }
 
-/* SECTIONS */
-.container {
-  padding: 30px 15px; /* reduced spacing */
-  text-align: center;
+/* HERO */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 60px;
 }
 
-h1 { color: #38bdf8; margin-bottom: 5px; }
-h2 { color: #38bdf8; margin-bottom: 10px; }
-
-/* CARDS */
-.card {
-  background: rgba(255,255,255,0.05);
-  padding: 15px;
-  margin: 10px;
-  border-radius: 10px;
-  display: inline-block;
-  width: 230px;
-  transition: 0.3s;
+.hero h1 {
+  font-size: 40px;
 }
 
-.card:hover {
-  transform: translateY(-5px);
+.hero span {
+  color: #38bdf8;
 }
 
 /* BUTTON */
 .btn {
-  display: inline-block;
-  margin: 3px;
-  padding: 6px 12px;
+  padding: 10px 20px;
   background: #38bdf8;
   color: black;
-  border-radius: 5px;
+  border-radius: 6px;
   text-decoration: none;
 }
 
-/* FILTER */
-.filter-btn {
-  margin: 3px;
-  padding: 6px 12px;
-  border: none;
-  background: #1e293b;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
+/* SECTION */
+.section {
+  padding: 50px 60px;
 }
 
-.filter-btn.active {
-  background: #38bdf8;
-  color: black;
+/* PROJECT GRID */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
-.hidden {
-  display: none;
+/* CARD */
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  background: rgba(255,255,255,0.08);
 }
 
 /* SKILLS */
 .skills span {
   display: inline-block;
-  margin: 5px;
-  padding: 6px 10px;
+  margin: 6px;
+  padding: 8px 12px;
   background: #1e293b;
-  border-radius: 5px;
+  border-radius: 6px;
 }
 
 /* CONTACT */
-.contact i {
-  margin: 5px;
-  font-size: 18px;
+.contact p {
+  margin: 5px 0;
 }
 </style>
 
@@ -115,50 +97,46 @@ h2 { color: #38bdf8; margin-bottom: 10px; }
 
 <body>
 
-<div id="particles-js"></div>
-
-<!-- NAVBAR -->
-<div class="navbar">
-  <a href="#">Home</a>
-  <a href="#projects">Projects</a>
-  <a href="#skills">Skills</a>
-  <a href="#contact">Contact</a>
-</div>
+<!-- NAV -->
+<nav>
+  <h3>Ardhra</h3>
+  <div>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
 <!-- HERO -->
-<div class="container">
-  <h1>Hi, I'm Ardhra 👋</h1>
-  <p>Data Analyst | Data Scientist | AI/ML Enthusiast</p>
-</div>
-
-<!-- FILTER -->
-<div class="container">
-  <button class="filter-btn active" onclick="filterSelection('all')">All</button>
-  <button class="filter-btn" onclick="filterSelection('ml')">ML</button>
-  <button class="filter-btn" onclick="filterSelection('analysis')">Analysis</button>
+<div class="hero">
+  <div>
+    <h1>Hi, I'm <span>Ardhra</span></h1>
+    <p>Data Analyst | Data Scientist | ML Enthusiast</p>
+    <br>
+    <a href="#" class="btn">View Resume</a>
+  </div>
 </div>
 
 <!-- PROJECTS -->
-<div class="container" id="projects">
+<div class="section" id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
 
-  <div class="card ml">
-    <h3>Liver Disease</h3>
-    <p>ML Model</p>
-    <a href="#" class="btn">Demo</a>
-    <a href="#" class="btn">Code</a>
+    <div class="card">
+      <h3>Liver Disease Prediction</h3>
+      <p>ML model with 71% accuracy using Gradient Boosting</p>
+    </div>
+
+    <div class="card">
+      <h3>Flight Price Analysis</h3>
+      <p>EDA + prediction using ML techniques</p>
+    </div>
+
   </div>
-
-  <div class="card analysis">
-    <h3>Flight Price</h3>
-    <p>Analysis</p>
-    <a href="#" class="btn">Demo</a>
-    <a href="#" class="btn">Code</a>
-  </div>
-
 </div>
 
 <!-- SKILLS -->
-<div class="container" id="skills">
+<div class="section" id="skills">
   <h2>Skills</h2>
   <div class="skills">
     <span>Python</span>
@@ -171,38 +149,13 @@ h2 { color: #38bdf8; margin-bottom: 10px; }
 </div>
 
 <!-- CONTACT -->
-<div class="container" id="contact">
+<div class="section" id="contact">
   <h2>Contact</h2>
   <div class="contact">
     <p>Email: yourmail@gmail.com</p>
-    <p>
-      <i class="fab fa-github"></i> GitHub |
-      <i class="fab fa-linkedin"></i> LinkedIn
-    </p>
+    <p>GitHub | LinkedIn</p>
   </div>
 </div>
-
-<script>
-function filterSelection(category) {
-  let cards = document.getElementsByClassName("card");
-
-  for (let i = 0; i < cards.length; i++) {
-    cards[i].classList.add("hidden");
-    if (category === "all" || cards[i].classList.contains(category)) {
-      cards[i].classList.remove("hidden");
-    }
-  }
-}
-
-particlesJS("particles-js", {
-  particles: {
-    number: { value: 50 },
-    size: { value: 3 },
-    move: { speed: 2 },
-    line_linked: { enable: true }
-  }
-});
-</script>
 
 </body>
 </html>
