@@ -6,12 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ardhra K PORTFOLIO</title>
 
-<!-- ICONS -->
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<!-- PARTICLES -->
-
 <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
 <style>
@@ -20,10 +15,9 @@ body {
   font-family: Arial;
   background: #0f172a;
   color: white;
-  overflow-x: hidden;
 }
 
-/* PARTICLE BACKGROUND */
+/* PARTICLES */
 #particles-js {
   position: fixed;
   width: 100%;
@@ -47,25 +41,17 @@ body {
   text-decoration: none;
 }
 
-/* HERO */
+.navbar a:hover {
+  color: #38bdf8;
+}
+
+/* SECTION */
 .container {
   padding: 60px 20px;
   text-align: center;
 }
 
 h1 { color: #38bdf8; }
-
-/* CURSOR */
-.cursor {
-  width: 20px;
-  height: 20px;
-  border: 2px solid #38bdf8;
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  transition: 0.1s;
-  box-shadow: 0 0 15px #38bdf8;
-}
 
 /* CARDS */
 .card {
@@ -98,9 +84,10 @@ h1 { color: #38bdf8; }
   color: black;
   border-radius: 6px;
   text-decoration: none;
+  font-size: 14px;
 }
 
-/* FILTER BUTTONS */
+/* FILTER */
 .filter-btn {
   margin: 5px;
   padding: 8px 15px;
@@ -120,6 +107,39 @@ h1 { color: #38bdf8; }
   display: none;
 }
 
+/* SKILLS */
+.skill {
+  margin: 15px auto;
+  width: 60%;
+  text-align: left;
+}
+
+.bar {
+  height: 10px;
+  background: #334155;
+  border-radius: 5px;
+}
+
+.fill {
+  height: 10px;
+  background: #38bdf8;
+  border-radius: 5px;
+}
+
+/* CONTACT */
+.contact a {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.github { background: #38bdf8; color: black; }
+.linkedin { background: #0a66c2; color: white; }
+.resume { background: #22c55e; color: black; }
+
 </style>
 
 </head>
@@ -127,20 +147,21 @@ h1 { color: #38bdf8; }
 <body>
 
 <div id="particles-js"></div>
-<div class="cursor" id="cursor"></div>
 
 <!-- NAVBAR -->
 
 <div class="navbar">
   <a href="#">Home</a>
   <a href="#projects">Projects</a>
+  <a href="#skills">Skills</a>
+  <a href="#contact">Contact</a>
 </div>
 
 <!-- HERO -->
 
 <div class="container">
   <h1>Hi, I'm Ardhra 👋</h1>
-  <p>Data Analyst| Data Scientist | AI/ML Enthusiast</p>
+  <p>Data Analyst | Data Scientist | AI/ML Enthusiast</p>
 </div>
 
 <!-- FILTER -->
@@ -156,32 +177,68 @@ h1 { color: #38bdf8; }
 <div class="container" id="projects">
 
   <div class="card ml">
-    <img src="https://via.placeholder.com/300x180" class="project-img">
-    <h3>Liver Disease</h3>
-    <p>ML Model</p>
+    <img src="images/liver.png" class="project-img">
+    <h3>Liver Disease Prediction</h3>
+    <p>Gradient Boosting | F1 Score: 0.83</p>
     <a href="#" class="btn">Demo</a>
     <a href="#" class="btn">Code</a>
   </div>
 
   <div class="card analysis">
-    <img src="https://via.placeholder.com/300x180" class="project-img">
-    <h3>Flight Price</h3>
-    <p>Analysis</p>
+    <img src="images/flight.png" class="project-img">
+    <h3>Flight Price Prediction</h3>
+    <p>Regression | Feature Engineering</p>
     <a href="#" class="btn">Demo</a>
     <a href="#" class="btn">Code</a>
   </div>
 
 </div>
 
-<script>
-/* CURSOR */
-const cursor = document.getElementById("cursor");
-document.addEventListener("mousemove", e => {
-  cursor.style.top = e.clientY + "px";
-  cursor.style.left = e.clientX + "px";
-});
+<!-- SKILLS -->
 
-/* FILTER */
+<div class="container" id="skills">
+  <h2>🧠 Skills</h2>
+
+  <div class="skill">Python
+    <div class="bar"><div class="fill" style="width:90%"></div></div>
+  </div>
+
+  <div class="skill">Machine Learning
+    <div class="bar"><div class="fill" style="width:85%"></div></div>
+  </div>
+
+  <div class="skill">Data Analysis
+    <div class="bar"><div class="fill" style="width:88%"></div></div>
+  </div>
+
+  <div class="skill">SQL
+    <div class="bar"><div class="fill" style="width:80%"></div></div>
+  </div>
+
+</div>
+
+<!-- CONTACT -->
+
+<div class="container contact" id="contact">
+  <h2>📫 Contact</h2>
+
+  <p>Email: ardhrakn047@gmail.com</p>
+
+  <a href="https://github.com/ardhra047" class="github">
+    <i class="fab fa-github"></i> GitHub
+  </a>
+
+  <a href="https://www.linkedin.com/in/ardhra-k-916338297/" class="linkedin">
+    <i class="fab fa-linkedin"></i> LinkedIn
+  </a>
+
+  <a href="YOUR_RESUME_LINK" class="resume">
+    <i class="fas fa-file"></i> Resume
+  </a>
+
+</div>
+
+<script>
 function filterSelection(category) {
   let cards = document.getElementsByClassName("card");
 
@@ -193,7 +250,6 @@ function filterSelection(category) {
   }
 }
 
-/* PARTICLES */
 particlesJS("particles-js", {
   particles: {
     number: { value: 60 },
