@@ -2,144 +2,207 @@
 
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Ardhra K | Data Analyst | Data scientist | AI </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ardhra K PORTFOLIO</title>
 
-  <style>
-    body {
-      font-family: Arial;
-      margin: 0;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      color: white;
-    }
+<!-- ICONS -->
 
-    .container {
-      padding: 60px 20px;
-      text-align: center;
-    }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    h1 {
-      color: #38bdf8;
-      font-size: 40px;
-    }
+<!-- PARTICLES -->
 
-    h2 {
-      margin-bottom: 30px;
-    }
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
-    /* CARD DESIGN */
-    .card {
-      background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(10px);
-      padding: 20px;
-      margin: 15px;
-      border-radius: 12px;
-      display: inline-block;
-      width: 250px;
-      transition: 0.3s;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0f172a;
+  color: white;
+  overflow-x: hidden;
+}
 
-    .card:hover {
-      transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 0 20px rgba(56,189,248,0.5);
-    }
+/* PARTICLE BACKGROUND */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
 
-    /* BUTTONS */
-    .btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 25px;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+/* NAVBAR */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  padding: 15px;
+  text-align: center;
+}
 
-    .github {
-      background: #38bdf8;
-      color: black;
-    }
+.navbar a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
 
-    .resume {
-      background: #22c55e;
-      color: black;
-    }
+/* HERO */
+.container {
+  padding: 60px 20px;
+  text-align: center;
+}
 
-    .btn:hover {
-      opacity: 0.8;
-      transform: scale(1.05);
-    }
+h1 { color: #38bdf8; }
 
-    /* SECTION DIVIDER */
-    .divider {
-      height: 1px;
-      background: rgba(255,255,255,0.1);
-      margin: 40px 0;
-    }
+/* CURSOR */
+.cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #38bdf8;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transition: 0.1s;
+  box-shadow: 0 0 15px #38bdf8;
+}
 
-  </style>
+/* CARDS */
+.card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  margin: 15px;
+  border-radius: 12px;
+  display: inline-block;
+  width: 260px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px #38bdf8;
+}
+
+.project-img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-block;
+  margin: 5px;
+  padding: 8px 15px;
+  background: #38bdf8;
+  color: black;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+/* FILTER BUTTONS */
+.filter-btn {
+  margin: 5px;
+  padding: 8px 15px;
+  border: none;
+  background: #1e293b;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.filter-btn.active {
+  background: #38bdf8;
+  color: black;
+}
+
+.hidden {
+  display: none;
+}
+
+</style>
 
 </head>
 
 <body>
 
+<div id="particles-js"></div>
+<div class="cursor" id="cursor"></div>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+  <a href="#">Home</a>
+  <a href="#projects">Projects</a>
+</div>
+
 <!-- HERO -->
 
 <div class="container">
   <h1>Hi, I'm Ardhra 👋</h1>
-  <p>Data Analyst | Data Scientist | AI/ML Enthusiast </p>
+  <p>Data Analyst| Data Scientist | AI/ML Enthusiast</p>
 </div>
 
-<div class="divider"></div>
+<!-- FILTER -->
+
+<div class="container">
+  <button class="filter-btn active" onclick="filterSelection('all')">All</button>
+  <button class="filter-btn" onclick="filterSelection('ml')">ML</button>
+  <button class="filter-btn" onclick="filterSelection('analysis')">Analysis</button>
+</div>
 
 <!-- PROJECTS -->
 
-<div class="container">
-  <h2>🚀 Projects</h2>
+<div class="container" id="projects">
 
-  <div class="card">
-    <h3>Liver Disease Prediction</h3>
-    <p>Gradient Boosting | F1 Score: 0.83</p>
+  <div class="card ml">
+    <img src="https://via.placeholder.com/300x180" class="project-img">
+    <h3>Liver Disease</h3>
+    <p>ML Model</p>
+    <a href="#" class="btn">Demo</a>
+    <a href="#" class="btn">Code</a>
   </div>
 
-  <div class="card">
-    <h3>Flight Price Prediction</h3>
-    <p>Regression | Feature Engineering</p>
+  <div class="card analysis">
+    <img src="https://via.placeholder.com/300x180" class="project-img">
+    <h3>Flight Price</h3>
+    <p>Analysis</p>
+    <a href="#" class="btn">Demo</a>
+    <a href="#" class="btn">Code</a>
   </div>
 
-  <div class="card">
-    <h3>Digit Recognition</h3>
-    <p>CNN | MNIST Dataset</p>
-  </div>
 </div>
 
-<div class="divider"></div>
+<script>
+/* CURSOR */
+const cursor = document.getElementById("cursor");
+document.addEventListener("mousemove", e => {
+  cursor.style.top = e.clientY + "px";
+  cursor.style.left = e.clientX + "px";
+});
 
-<!-- CONTACT -->
+/* FILTER */
+function filterSelection(category) {
+  let cards = document.getElementsByClassName("card");
 
-<div class="container">
-  <h2>📫 Contact</h2>
-  <p>Email: ardhrakn047@gmail.com</p>
-</div>
+  for (let i = 0; i < cards.length; i++) {
+    cards[i].classList.add("hidden");
+    if (category === "all" || cards[i].classList.contains(category)) {
+      cards[i].classList.remove("hidden");
+    }
+  }
+}
 
-<div class="divider"></div>
-
-<!-- CONNECT -->
-
-<div class="container">
-  <h2>🔗 Connect</h2>
-
-  <a href="https://github.com/ardhra047" target="_blank" class="btn github">
-    GitHub
-  </a>
- <a href="https://www.linkedin.com/in/ardhra-k-916338297/" target="_blank" class="btn linkedin">
-    linkedin
-  </a>
-  <a href="YOUR_RESUME_LINK" target="_blank" class="btn resume">
-    Resume
-  </a>
-
-</div>
+/* PARTICLES */
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 60 },
+    size: { value: 3 },
+    move: { speed: 2 },
+    line_linked: { enable: true }
+  }
+});
+</script>
 
 </body>
 </html>
