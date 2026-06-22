@@ -44,13 +44,26 @@ nav a {
   color: #38bdf8;
 }
 
-/* BUTTON */
+.resume-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
 .btn {
-  padding: 10px 20px;
-  background: #38bdf8;
+  padding: 12px 18px;
+  background-color: #38bdf8;
   color: black;
-  border-radius: 6px;
+  border-radius: 8px;
   text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #0ea5e9;
+  color: white;
 }
 
 /* SECTION */
@@ -90,6 +103,16 @@ nav a {
 /* CONTACT */
 .contact p {
   margin: 5px 0;
+@media (max-width: 768px) {
+  .resume-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
 }
 </style>
 
@@ -111,9 +134,13 @@ nav a {
 <div class="hero">
   <div>
     <h1>Hi, I'm <span>Ardhra</span></h1>
-    <p>Data Analyst | Data Scientist | ML Enthusiast</p>
+    <p>Data Analyst | Data Scientist | AI ML Enthusiast</p>
     <br>
-    <a href="#" class="btn">View Resume</a>
+  <div class="resume-buttons">
+  <a href="resumes/ai_ml_resume.pdf" target="_blank" class="btn">AI/ML Resume</a>
+  <a href="resumes/data_analyst_resume.pdf" target="_blank" class="btn">Data Analyst Resume</a>
+  <a href="resumes/data_scientist_resume.pdf" target="_blank" class="btn">Data Scientist Resume</a>
+</div>
   </div>
 </div>
 
