@@ -152,17 +152,33 @@ nav a {
 }
 
 /* CONTACT */
-.contact p {
-  margin: 5px 0;
-@media (max-width: 768px) {
-  .resume-buttons {
-    flex-direction: column;
-  }
+.contact {
+  margin-top: 15px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
 
-  .btn {
-    width: 100%;
-    text-align: center;
-  }
+.contact .btn {
+  padding: 12px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+}
+
+/* Email button */
+.contact .btn:first-child {
+  background-color: #22c55e;
+}
+
+/* LinkedIn button */
+.contact .btn:last-child {
+  background-color: #0a66c2;
+}
+
+.contact .btn:hover {
+  opacity: 0.85;
 }
 }
   @media (max-width: 768px) {
@@ -220,12 +236,14 @@ nav a {
       <h3>🏫 Higher Secondary (12th)</h3>
       <p><strong>School:</strong> GHSS KODUMUNDA </p>
       <p><strong>Year:</strong> 2021 - 2022</p>
+      <p><strong>Mark:</strong> 79%</p>
     </div>
 
     <div class="education-card">
       <h3>🏫 Secondary (10th)</h3>
       <p><strong>School:</strong> A.E.T English Medium School Amayur </p>
       <p><strong>Year:</strong> 2020 </p>
+      <p><strong>Mark:</strong> 78.6%</p>
     </div>
 
   </div>
@@ -312,9 +330,19 @@ nav a {
 <!-- CONTACT -->
 <div class="section" id="contact">
   <h2>Contact</h2>
+
   <div class="contact">
-    <p>Email: ardhrakn047@gmail.com</p>
-    <a href="https://www.linkedin.com/in/ardhra-k-916338297/" target="_blank">LinkedIn</a>
+    
+    <a href="mailto:ardhrakn047@gmail.com" class="btn">
+      📧 Email Me
+    </a>
+
+    <a href="https://www.linkedin.com/in/ardhra-k-916338297/" 
+       target="_blank" 
+       class="btn">
+      🔗 LinkedIn
+    </a>
+
   </div>
 </div>
 
